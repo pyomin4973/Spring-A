@@ -1,9 +1,9 @@
 package jpabook.jpashop.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Member {
     @Id
@@ -15,6 +15,9 @@ public class Member {
     private String street;
     private String zipcode;
 
+    //양방향이 필요한 경우 추가
+    @OneToMany(mappedBy = "member") //내 주인은 Order 클래스의 member이다.
+    private List<Order> orders=new ArrayList<>();
     public Long getId() {
         return id;
     }
