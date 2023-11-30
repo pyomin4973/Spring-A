@@ -1,0 +1,21 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      force-response: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/zerobase?useSSL=false&serverTimeZone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: p&j112800!
+
+    jpa:
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      generate-ddl: false
+      hibernate:
+        ddl-auto: create
+      show_sql: true
+      format_sql: false
